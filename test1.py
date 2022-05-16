@@ -6,11 +6,10 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
-from kivy.lang.builder import Builder
 from kivy.uix.popup import Popup
 import smtplib
 from kivy.uix.floatlayout import FloatLayout
-Builder.load_file('test.kv')
+
 
 def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
