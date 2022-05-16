@@ -32,7 +32,7 @@ jobs:
       - name: Install python modual
         uses: ArtemSBulgakov/buildozer-action@v1
         with:
-          command: pip install smtplib
+          command: pip3 install smtplib
         
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
