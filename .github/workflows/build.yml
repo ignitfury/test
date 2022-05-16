@@ -16,7 +16,8 @@ jobs:
         run: |
           echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
         shell: bash
-
+      
+        
       - name: Cache Buildozer global directory
         uses: actions/cache@v2
         with:
@@ -27,7 +28,12 @@ jobs:
         with:
           path: .buildozer
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
-
+          
+      - name: Install python modual
+        uses: ArtemSBulgakov/buildozer-action@v1
+        with:
+          command: pip install smtplib
+        
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
