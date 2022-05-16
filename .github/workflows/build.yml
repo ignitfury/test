@@ -18,7 +18,7 @@ jobs:
         shell: bash
        
       - name: Install python modual
-        run: pip3 install smtplib
+        run: pip3 
         
       - name: Cache Buildozer global directory
         uses: actions/cache@v2
